@@ -8,7 +8,33 @@
         public override void Up()
         {
             CreateTable(
-                "dbo.Customers",
+                "public.Customers",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 255),
+                        IsSubscribedToNewsletter = c.Boolean(nullable: false),
+                        MembershipTypeId = c.Short(nullable: false),
+                        Birthdate = c.DateTime(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("public.MembershipTypes", t => t.MembershipTypeId, cascadeDelete: true)
+                .Index(t => t.MembershipTypeId);
+            
+            CreateTable(
+                "public.MembershipTypes",
+                c => new
+                    {
+                        Id = c.Short(nullable: false),
+                        Name = c.String(),
+                        SignUpFee = c.Short(nullable: false),
+                        DurationInMonths = c.Short(nullable: false),
+                        DiscountRate = c.Short(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "public.Movies",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -17,16 +43,7 @@
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Movies",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.AspNetRoles",
+                "public.AspNetRoles",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
@@ -37,20 +54,20 @@
                 .Index(t => t.Name, unique: true, name: "RoleNameIndex");
             
             CreateTable(
-                "dbo.AspNetUserRoles",
+                "public.AspNetUserRoles",
                 c => new
                     {
                         UserId = c.String(nullable: false, maxLength: 128),
                         RoleId = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.UserId, t.RoleId })
-                .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("public.AspNetRoles", t => t.RoleId, cascadeDelete: true)
+                .ForeignKey("public.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
             
             CreateTable(
-                "dbo.AspNetUsers",
+                "public.AspNetUsers",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
@@ -70,7 +87,7 @@
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex");
             
             CreateTable(
-                "dbo.AspNetUserClaims",
+                "public.AspNetUserClaims",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -79,11 +96,11 @@
                         ClaimValue = c.String(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("public.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
             CreateTable(
-                "dbo.AspNetUserLogins",
+                "public.AspNetUserLogins",
                 c => new
                     {
                         LoginProvider = c.String(nullable: false, maxLength: 128),
@@ -91,30 +108,33 @@
                         UserId = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("public.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
-            DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
-            DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
-            DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
-            DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropTable("dbo.AspNetUserLogins");
-            DropTable("dbo.AspNetUserClaims");
-            DropTable("dbo.AspNetUsers");
-            DropTable("dbo.AspNetUserRoles");
-            DropTable("dbo.AspNetRoles");
-            DropTable("dbo.Movies");
-            DropTable("dbo.Customers");
+            DropForeignKey("public.AspNetUserRoles", "UserId", "public.AspNetUsers");
+            DropForeignKey("public.AspNetUserLogins", "UserId", "public.AspNetUsers");
+            DropForeignKey("public.AspNetUserClaims", "UserId", "public.AspNetUsers");
+            DropForeignKey("public.AspNetUserRoles", "RoleId", "public.AspNetRoles");
+            DropForeignKey("public.Customers", "MembershipTypeId", "public.MembershipTypes");
+            DropIndex("public.AspNetUserLogins", new[] { "UserId" });
+            DropIndex("public.AspNetUserClaims", new[] { "UserId" });
+            DropIndex("public.AspNetUsers", "UserNameIndex");
+            DropIndex("public.AspNetUserRoles", new[] { "RoleId" });
+            DropIndex("public.AspNetUserRoles", new[] { "UserId" });
+            DropIndex("public.AspNetRoles", "RoleNameIndex");
+            DropIndex("public.Customers", new[] { "MembershipTypeId" });
+            DropTable("public.AspNetUserLogins");
+            DropTable("public.AspNetUserClaims");
+            DropTable("public.AspNetUsers");
+            DropTable("public.AspNetUserRoles");
+            DropTable("public.AspNetRoles");
+            DropTable("public.Movies");
+            DropTable("public.MembershipTypes");
+            DropTable("public.Customers");
         }
     }
 }
