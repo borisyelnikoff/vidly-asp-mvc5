@@ -2,6 +2,8 @@
 using System.Web.Mvc;
 using Vidly.Models;
 using System.Data.Entity;
+using Antlr.Runtime.Misc;
+using System.Data.Entity.Infrastructure.MappingViews;
 
 namespace Vidly.Controllers
 {
@@ -11,7 +13,7 @@ namespace Vidly.Controllers
         // GET: Customer
         protected override void Dispose(bool disposing)
         {
-            //_context.Dispose();
+            _context.Dispose();
         }
         public ActionResult Index()
         {
@@ -22,6 +24,22 @@ namespace Vidly.Controllers
         {
             var customers = _context.Customers.Include(c => c.MembershipType).ToList();
             return View(customers.Find(c => c.Id == id));
+        }
+        public ActionResult New()
+        {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var newCustomerViewModel = new NewCustomerViewModel
+            {
+                MembershipTypes = membershipTypes
+            };
+            return View(newCustomerViewModel);
+        }
+        [HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

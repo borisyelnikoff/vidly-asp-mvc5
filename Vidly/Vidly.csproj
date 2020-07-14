@@ -204,17 +204,28 @@
     <Compile Include="Migrations\202007120807426_PopulateMembershipTypes.designer.cs">
       <DependentUpon>202007120807426_PopulateMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007130727419_AddGenreAndOtherPropertiesToMovie.cs" />
+    <Compile Include="Migrations\202007130727419_AddGenreAndOtherPropertiesToMovie.designer.cs">
+      <DependentUpon>202007130727419_AddGenreAndOtherPropertiesToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007130728529_PopulateGenres.cs" />
+    <Compile Include="Migrations\202007130728529_PopulateGenres.designer.cs">
+      <DependentUpon>202007130728529_PopulateGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\AppRole.cs" />
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\AppUserManager.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\NewCustomerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\PopulateMovies.sql" />
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -251,16 +262,15 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Movie\Index.cshtml" />
-    <Content Include="Views\Movie\Random.cshtml" />
-    <Content Include="Views\Movie\Details.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Customers\New.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -280,6 +290,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007120807426_PopulateMembershipTypes.resx">
       <DependentUpon>202007120807426_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007130727419_AddGenreAndOtherPropertiesToMovie.resx">
+      <DependentUpon>202007130727419_AddGenreAndOtherPropertiesToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007130728529_PopulateGenres.resx">
+      <DependentUpon>202007130728529_PopulateGenres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
