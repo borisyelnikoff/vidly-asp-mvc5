@@ -212,6 +212,14 @@
     <Compile Include="Migrations\202007130728529_PopulateGenres.designer.cs">
       <DependentUpon>202007130728529_PopulateGenres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007140627450_AlterMembershipTypeToYearly.cs" />
+    <Compile Include="Migrations\202007140627450_AlterMembershipTypeToYearly.designer.cs">
+      <DependentUpon>202007140627450_AlterMembershipTypeToYearly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007140649216_RestartMoviesIdSequence.cs" />
+    <Compile Include="Migrations\202007140649216_RestartMoviesIdSequence.designer.cs">
+      <DependentUpon>202007140649216_RestartMoviesIdSequence.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\AppRole.cs" />
@@ -296,6 +304,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007130728529_PopulateGenres.resx">
       <DependentUpon>202007130728529_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007140627450_AlterMembershipTypeToYearly.resx">
+      <DependentUpon>202007140627450_AlterMembershipTypeToYearly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007140649216_RestartMoviesIdSequence.resx">
+      <DependentUpon>202007140649216_RestartMoviesIdSequence.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
