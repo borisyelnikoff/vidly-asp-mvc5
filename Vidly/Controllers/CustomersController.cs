@@ -2,9 +2,6 @@
 using System.Web.Mvc;
 using Vidly.Models;
 using System.Data.Entity;
-using Antlr.Runtime.Misc;
-using System.Data.Entity.Infrastructure.MappingViews;
-using System.Data.Entity.Migrations;
 
 namespace Vidly.Controllers
 {
@@ -30,6 +27,7 @@ namespace Vidly.Controllers
 
             return View(customer);
         }
+
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
@@ -44,18 +42,20 @@ namespace Vidly.Controllers
 
             return View("CustomerForm", customerForm);
         }
-        public ActionResult CustomerForm()
-        {
-            var membershipTypes = _context.MembershipTypes.ToList();
-            var newCustomerViewModel = new CustomerFormViewModel
-            {
-                MembershipTypes = membershipTypes
-            };
-            return View(newCustomerViewModel);
-        }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var customerForm = new CustomerFormViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+                return View("CustomerForm", customerForm);
+            }
+
             if (customer.Id == 0)
                 _context.Customers.Add(customer);
             else
@@ -69,16 +69,19 @@ namespace Vidly.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index", "Customers");
         }
-        
+
         public ActionResult New()
         {
             var customerForm = new CustomerFormViewModel
             {
+                Customer = new Customer(),
                 MembershipTypes = _context.MembershipTypes.ToList()
             };
 
-            return RedirectToAction("CustomerForm", "Customers", customerForm);
+            return View("CustomerForm", customerForm);
         }
+
+        [HttpDelete]
         public ActionResult Delete(int id)
         {
             if (id != 0)

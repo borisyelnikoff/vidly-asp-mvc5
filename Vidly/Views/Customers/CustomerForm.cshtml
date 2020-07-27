@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (Model.Customer == null)
+@if (Model.Customer == null || Model.Customer.Id == 0)
 {
     <h2>Add New Customer</h2>
 }
@@ -12,21 +12,24 @@ else
 {
     <h2>Edit Customer</h2>
 }
-
+@Html.ValidationSummary()
 @using (Html.BeginForm("Save", "Customers"))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
-        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control", required = "true"})
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Customer.Birthdate)
-        @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date"})
+        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.MembershipTypeId)
         @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"),
-                               "Select Item", new { @class = "form-control", required = "true" })
+                               "Select Item", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Birthdate)
+        @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(m => m.Customer.Birthdate)
     </div>
     <div class="checkbox">
         <label>
@@ -34,6 +37,7 @@ else
         </label>
     </div>
     @Html.HiddenFor(m => m.Customer.Id);
+    @Html.AntiForgeryToken();
     <button type="submit" class="btn btn-primary">Save</button>
 }
 @if (Model.Customer != null)
@@ -42,3 +46,7 @@ else
     @Html.ActionLink("Delete Customer", "Delete", "Customers", new { id = Model.Customer.Id }, new { @class = "btn btn-primary" })
 }
 
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
