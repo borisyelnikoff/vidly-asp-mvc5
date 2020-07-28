@@ -1,5 +1,4 @@
-﻿@model IEnumerable<Vidly.Models.Customer>
-@{
+﻿@{
     ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -25,7 +24,7 @@
 {
     <script>
         $(function () {
-            $("#customers").DataTable({
+            const table = $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     dataSrc: ""
@@ -36,11 +35,11 @@
                         render: (data, type, customer) => "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>"
                     },
                     {
-                        data: "name"
+                        data: "membershipType.name",
                     },
                     {
                         data: "id",
-                        render: data => "<button class='btn-link delete-js> data-customer-id='" + data + "'>Delete</button>"
+                        render: data => "<button class='btn-link js-delete' data-customer-id='" + data + "'>Delete</button>"
                     }
                 ]
             });
@@ -51,13 +50,11 @@
                         $.ajax({
                             url: "/api/customers/" + $(this).attr("data-customer-id"),
                             method: "DELETE",
-                            success: () => {
-                                $(this).parents("tr").remove();
-                            }
+                            success: () => table.row($(this).parents("tr")).remove().draw()
                         });
                     }
                 });
-            })
+            });
         });
     </script>
 }
