@@ -8,7 +8,7 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        private readonly AppDbContext _context = new AppDbContext();
+        private readonly ApplicationDbContext _context = new ApplicationDbContext();
         // GET: Movies
         protected override void Dispose(bool disposing)
         {

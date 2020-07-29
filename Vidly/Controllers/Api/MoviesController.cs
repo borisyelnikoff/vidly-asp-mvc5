@@ -10,7 +10,7 @@ namespace Vidly.Controllers.Api
 {
     public class MoviesController : ApiController
     {
-        private readonly AppDbContext _context = new AppDbContext();
+        private readonly ApplicationDbContext _context = new ApplicationDbContext();
         public IHttpActionResult GetMovies()
         {
             var movies = _context.Movies

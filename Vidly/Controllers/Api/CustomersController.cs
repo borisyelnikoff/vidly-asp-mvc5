@@ -10,7 +10,7 @@ namespace Vidly.Controllers.Api
 {
     public class CustomersController : ApiController
     {
-        private readonly AppDbContext _context = new AppDbContext();
+        private readonly ApplicationDbContext _context = new ApplicationDbContext();
 
         public IHttpActionResult GetCustomers()
         {

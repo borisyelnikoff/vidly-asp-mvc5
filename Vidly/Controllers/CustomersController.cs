@@ -7,7 +7,7 @@ namespace Vidly.Controllers
 {
     public class CustomersController : Controller
     {
-        private AppDbContext _context = new AppDbContext();
+        private ApplicationDbContext _context = new ApplicationDbContext();
         // GET: Customer
         protected override void Dispose(bool disposing)
         {
