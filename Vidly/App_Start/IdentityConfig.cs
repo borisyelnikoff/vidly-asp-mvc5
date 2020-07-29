@@ -12,7 +12,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Vidly.Models;
 
-namespace AspNetMVC5Template
+namespace Vidly
 {
     public class EmailService : IIdentityMessageService
     {

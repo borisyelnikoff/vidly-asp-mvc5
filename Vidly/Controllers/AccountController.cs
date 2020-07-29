@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Vidly.Models;
 
-namespace AspNetMVC5Template.Controllers
+namespace Vidly.Controllers
 {
     [Authorize]
     public class AccountController : Controller

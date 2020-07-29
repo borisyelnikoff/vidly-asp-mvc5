@@ -13,10 +13,7 @@
                 <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
                 <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>@Html.ActionLink("Register", "Register", "Account")</li>
-                <li>@Html.ActionLink("Log in", "Login", "Account")</li>
-            </ul>
+            @Html.Partial("_LoginPartial")
         </div>
     </div>
 </div>
