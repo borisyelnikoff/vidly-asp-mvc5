@@ -13,6 +13,7 @@ namespace Vidly.Controllers
         {
             _context.Dispose();
         }
+
         public ActionResult Index()
         {
             return View();
@@ -41,6 +42,7 @@ namespace Vidly.Controllers
 
             return View("CustomerForm", customerForm);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
