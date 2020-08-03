@@ -281,6 +281,10 @@
     <Compile Include="Migrations\202008030743221_AddRental.designer.cs">
       <DependentUpon>202008030743221_AddRental.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008030816557_ChangeRentalMovieIdToId.cs" />
+    <Compile Include="Migrations\202008030816557_ChangeRentalMovieIdToId.designer.cs">
+      <DependentUpon>202008030816557_ChangeRentalMovieIdToId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ForgotPasswordViewModel.cs" />
@@ -659,6 +663,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008030743221_AddRental.resx">
       <DependentUpon>202008030743221_AddRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008030816557_ChangeRentalMovieIdToId.resx">
+      <DependentUpon>202008030816557_ChangeRentalMovieIdToId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
