@@ -12,13 +12,18 @@ namespace Vidly.Controllers.Api
     {
         private readonly ApplicationDbContext _context = new ApplicationDbContext();
 
-        public IHttpActionResult GetCustomers()
+        public IHttpActionResult GetCustomers(string query = null)
         {
-            var customers = _context.Customers
-                .Include(c => c.MembershipType)
+            var customersQuery = _context.Customers.Include(c => c.MembershipType);
+
+            if (!string.IsNullOrWhiteSpace(query))
+                customersQuery = customersQuery.Where(c => c.Name.Contains(query));
+            
+            var customerDtos = customersQuery
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDto>);
-            return Ok(customers);
+            
+            return Ok(customerDtos);
         }
 
         public IHttpActionResult GetCustomer(int id)

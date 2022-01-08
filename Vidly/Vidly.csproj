@@ -228,6 +228,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
@@ -237,56 +238,65 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007120802455_InitialModel.cs" />
-    <Compile Include="Migrations\202007120802455_InitialModel.designer.cs">
+    <Compile Include="fonts\Migrations\202007120802455_InitialModel.cs" />
+    <Compile Include="fonts\Migrations\202007120802455_InitialModel.designer.cs">
       <DependentUpon>202007120802455_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007120807426_PopulateMembershipTypes.cs" />
-    <Compile Include="Migrations\202007120807426_PopulateMembershipTypes.designer.cs">
+    <Compile Include="fonts\Migrations\202007120807426_PopulateMembershipTypes.cs" />
+    <Compile Include="fonts\Migrations\202007120807426_PopulateMembershipTypes.designer.cs">
       <DependentUpon>202007120807426_PopulateMembershipTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007130727419_AddGenreAndOtherPropertiesToMovie.cs" />
-    <Compile Include="Migrations\202007130727419_AddGenreAndOtherPropertiesToMovie.designer.cs">
+    <Compile Include="fonts\Migrations\202007130727419_AddGenreAndOtherPropertiesToMovie.cs" />
+    <Compile Include="fonts\Migrations\202007130727419_AddGenreAndOtherPropertiesToMovie.designer.cs">
       <DependentUpon>202007130727419_AddGenreAndOtherPropertiesToMovie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007130728529_PopulateGenres.cs" />
-    <Compile Include="Migrations\202007130728529_PopulateGenres.designer.cs">
+    <Compile Include="fonts\Migrations\202007130728529_PopulateGenres.cs" />
+    <Compile Include="fonts\Migrations\202007130728529_PopulateGenres.designer.cs">
       <DependentUpon>202007130728529_PopulateGenres.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007140627450_AlterMembershipTypeToYearly.cs" />
-    <Compile Include="Migrations\202007140627450_AlterMembershipTypeToYearly.designer.cs">
+    <Compile Include="fonts\Migrations\202007140627450_AlterMembershipTypeToYearly.cs" />
+    <Compile Include="fonts\Migrations\202007140627450_AlterMembershipTypeToYearly.designer.cs">
       <DependentUpon>202007140627450_AlterMembershipTypeToYearly.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007140649216_RestartMoviesIdSequence.cs" />
-    <Compile Include="Migrations\202007140649216_RestartMoviesIdSequence.designer.cs">
+    <Compile Include="fonts\Migrations\202007140649216_RestartMoviesIdSequence.cs" />
+    <Compile Include="fonts\Migrations\202007140649216_RestartMoviesIdSequence.designer.cs">
       <DependentUpon>202007140649216_RestartMoviesIdSequence.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007290620568_AddIdentityFramework.cs" />
-    <Compile Include="Migrations\202007290620568_AddIdentityFramework.designer.cs">
+    <Compile Include="fonts\Migrations\202007290620568_AddIdentityFramework.cs" />
+    <Compile Include="fonts\Migrations\202007290620568_AddIdentityFramework.designer.cs">
       <DependentUpon>202007290620568_AddIdentityFramework.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007301005088_SeedUsers.cs" />
-    <Compile Include="Migrations\202007301005088_SeedUsers.designer.cs">
+    <Compile Include="fonts\Migrations\202007301005088_SeedUsers.cs" />
+    <Compile Include="fonts\Migrations\202007301005088_SeedUsers.designer.cs">
       <DependentUpon>202007301005088_SeedUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008021759101_AddDrivingLicenseToApplicationUser.cs" />
-    <Compile Include="Migrations\202008021759101_AddDrivingLicenseToApplicationUser.designer.cs">
+    <Compile Include="fonts\Migrations\202008021759101_AddDrivingLicenseToApplicationUser.cs" />
+    <Compile Include="fonts\Migrations\202008021759101_AddDrivingLicenseToApplicationUser.designer.cs">
       <DependentUpon>202008021759101_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008021925343_ChangePhoneNumberToRequired.cs" />
-    <Compile Include="Migrations\202008021925343_ChangePhoneNumberToRequired.designer.cs">
+    <Compile Include="fonts\Migrations\202008021925343_ChangePhoneNumberToRequired.cs" />
+    <Compile Include="fonts\Migrations\202008021925343_ChangePhoneNumberToRequired.designer.cs">
       <DependentUpon>202008021925343_ChangePhoneNumberToRequired.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008030743221_AddRental.cs" />
-    <Compile Include="Migrations\202008030743221_AddRental.designer.cs">
+    <Compile Include="fonts\Migrations\202008030743221_AddRental.cs" />
+    <Compile Include="fonts\Migrations\202008030743221_AddRental.designer.cs">
       <DependentUpon>202008030743221_AddRental.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008030816557_ChangeRentalMovieIdToId.cs" />
-    <Compile Include="Migrations\202008030816557_ChangeRentalMovieIdToId.designer.cs">
+    <Compile Include="fonts\Migrations\202008030816557_ChangeRentalMovieIdToId.cs" />
+    <Compile Include="fonts\Migrations\202008030816557_ChangeRentalMovieIdToId.designer.cs">
       <DependentUpon>202008030816557_ChangeRentalMovieIdToId.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="fonts\Migrations\202008031753577_AddNumberAvailableToMovie.cs" />
+    <Compile Include="fonts\Migrations\202008031753577_AddNumberAvailableToMovie.designer.cs">
+      <DependentUpon>202008031753577_AddNumberAvailableToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fonts\Migrations\202008170650575_ChangeNumberAvailableToNonNullable.cs" />
+    <Compile Include="fonts\Migrations\202008170650575_ChangeNumberAvailableToNonNullable.designer.cs">
+      <DependentUpon>202008170650575_ChangeNumberAvailableToNonNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fonts\Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\ExternalLoginConfirmationViewModel.cs" />
@@ -474,10 +484,15 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\typeahead.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -485,7 +500,11 @@
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap3-typeahead.js" />
+    <Content Include="Scripts\bootstrap3-typeahead.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
@@ -572,6 +591,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -615,6 +640,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
+    <Content Include="Views\Rentals\New.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -631,41 +657,47 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007120802455_InitialModel.resx">
+    <EmbeddedResource Include="fonts\Migrations\202007120802455_InitialModel.resx">
       <DependentUpon>202007120802455_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007120807426_PopulateMembershipTypes.resx">
+    <EmbeddedResource Include="fonts\Migrations\202007120807426_PopulateMembershipTypes.resx">
       <DependentUpon>202007120807426_PopulateMembershipTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007130727419_AddGenreAndOtherPropertiesToMovie.resx">
+    <EmbeddedResource Include="fonts\Migrations\202007130727419_AddGenreAndOtherPropertiesToMovie.resx">
       <DependentUpon>202007130727419_AddGenreAndOtherPropertiesToMovie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007130728529_PopulateGenres.resx">
+    <EmbeddedResource Include="fonts\Migrations\202007130728529_PopulateGenres.resx">
       <DependentUpon>202007130728529_PopulateGenres.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007140627450_AlterMembershipTypeToYearly.resx">
+    <EmbeddedResource Include="fonts\Migrations\202007140627450_AlterMembershipTypeToYearly.resx">
       <DependentUpon>202007140627450_AlterMembershipTypeToYearly.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007140649216_RestartMoviesIdSequence.resx">
+    <EmbeddedResource Include="fonts\Migrations\202007140649216_RestartMoviesIdSequence.resx">
       <DependentUpon>202007140649216_RestartMoviesIdSequence.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007290620568_AddIdentityFramework.resx">
+    <EmbeddedResource Include="fonts\Migrations\202007290620568_AddIdentityFramework.resx">
       <DependentUpon>202007290620568_AddIdentityFramework.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007301005088_SeedUsers.resx">
+    <EmbeddedResource Include="fonts\Migrations\202007301005088_SeedUsers.resx">
       <DependentUpon>202007301005088_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008021759101_AddDrivingLicenseToApplicationUser.resx">
+    <EmbeddedResource Include="fonts\Migrations\202008021759101_AddDrivingLicenseToApplicationUser.resx">
       <DependentUpon>202008021759101_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008021925343_ChangePhoneNumberToRequired.resx">
+    <EmbeddedResource Include="fonts\Migrations\202008021925343_ChangePhoneNumberToRequired.resx">
       <DependentUpon>202008021925343_ChangePhoneNumberToRequired.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008030743221_AddRental.resx">
+    <EmbeddedResource Include="fonts\Migrations\202008030743221_AddRental.resx">
       <DependentUpon>202008030743221_AddRental.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008030816557_ChangeRentalMovieIdToId.resx">
+    <EmbeddedResource Include="fonts\Migrations\202008030816557_ChangeRentalMovieIdToId.resx">
       <DependentUpon>202008030816557_ChangeRentalMovieIdToId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fonts\Migrations\202008031753577_AddNumberAvailableToMovie.resx">
+      <DependentUpon>202008031753577_AddNumberAvailableToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fonts\Migrations\202008170650575_ChangeNumberAvailableToNonNullable.resx">
+      <DependentUpon>202008170650575_ChangeNumberAvailableToNonNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

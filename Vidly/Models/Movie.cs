@@ -21,6 +21,9 @@ namespace Vidly.Models
         [Display(Name = "Number in Stock")]
         [Range(1, 20)]
         public short NumberInStock { get; set; }
+
+        public short NumberAvailable { get; set; }
+
         public Genre Genre { get; set; }
 
         [Required (ErrorMessage = "Genre is required")]

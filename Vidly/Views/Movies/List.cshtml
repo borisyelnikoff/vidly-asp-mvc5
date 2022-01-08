@@ -45,7 +45,7 @@
                 ]
             });
 
-            $("#movies").on("click", ".js-delete", (e) => {
+            $("#movies").on("click", ".js-delete", e => {
                 const button = $(e.target);
                 bootbox.confirm("Are You sure You want to delete this movie?", result => {
                     if (result) {

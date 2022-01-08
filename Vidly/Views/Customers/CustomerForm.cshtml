@@ -12,9 +12,9 @@ else
 {
     <h2>Edit Customer</h2>
 }
-@Html.ValidationSummary()
 @using (Html.BeginForm("Save", "Customers"))
 {
+    @Html.ValidationSummary(true, "Please fix the following errors")
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
         @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
@@ -48,5 +48,5 @@ else
 
 @section scripts
 {
-    @Scripts.Render("~/bundles/lib")
+    @Scripts.Render("~/bundles/jqueryval")
 }
